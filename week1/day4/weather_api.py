@@ -1,7 +1,10 @@
 import pyowm
+import dotenv
+import os
 
+dotenv.load_dotenv()
 
-api_key  = "94c49b283dfb4005b739ebe1125eb833"
+api_key  = os.getenv('API_KEY')
 owm = pyowm.OWM(api_key)
 
 observation = owm.weather_manager().weather_at_place("Accra, gh")

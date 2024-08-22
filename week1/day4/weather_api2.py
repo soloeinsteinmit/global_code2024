@@ -1,15 +1,22 @@
 import requests
+import pprint
+import dotenv
+import os
 
-api_key  = "94c49b283dfb4005b739ebe1125eb833"
-city_name = "Accra"
+dotenv.load_dotenv()
+
+api_key  = os.getenv('API_KEY')
+# print(api_key)
+city_name = input("Enter city name: ")
+
 data = dict()
-print(data)
+# print(data)
 
 api_url = f"https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api_key}"
 response = requests.get(url=api_url)
 
 if response.status_code == 200:
     data = response.json()
-
-
-print(data)
+    pprint.pprint(data)
+else:
+    print(f"{city_name} is an invalid city name")
