@@ -14,34 +14,42 @@ get_courses() - returns the course list
 speak() - in the subclass, prints "I'm so tired!"
 
 '''
+from datetime import datetime
+
+
+
 class Person:
     # constructor
     def __init__(self, name, dob):
         self.name = name
         self.dob = dob
         
-    def speak():
+    def speak(self):
         print("Hello")
     
-    def walk():
+    def walk(self):
         print("walking away")
         
     def get_name(self):
         return self.name
         
     def get_age(self):
-        return f" You are {2024 - self.dob} of age"
+        # Get the current date and time
+        now = datetime.now()
+
+        # Extract the year from the current date
+        current_year = now.year
+        return f" You are {current_year - self.dob} of age"
     
 
 class Student(Person):
     def __init__(self, *course_name):
-        super().__init__()  # Call parent constructor
         self.course_names = course_name
         
     def get_courses(self):
-        return self.course_names
+        return list(self.course_names)
     
     # method overriding
-    def speak():
+    def speak(self):
         print("I'm so tired!")
     

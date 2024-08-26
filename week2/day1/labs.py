@@ -27,6 +27,14 @@ for num in numbers:
     even = lambda x: True if x % 2 == 0 else False
     if even(num):
         even_numbers.append(num) 
+        
+# using filter for is_even function
+filtered_even_numbers = filter(lambda x: True if x % 2 == 0 else False, numbers)
+print(list(filtered_even_numbers))
+
+# using map for is_even function
+mapped_even_numbers = map(lambda x: x if x % 2 == 0 else "Not even", numbers)
+print(list(mapped_even_numbers))
 
 # Using the built-in function not and your function is_even, find another way to return all the odd numbers in the numbers collection from the previous section.
 odd_numbers = []
@@ -37,5 +45,5 @@ for num in numbers:
         odd_numbers.append(num)
     
         
-print(even_numbers)
-print(odd_numbers)
+# print(even_numbers)
+# print(odd_numbers)

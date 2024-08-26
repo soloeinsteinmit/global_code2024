@@ -17,7 +17,7 @@ def join_string(list_of_words):
 
 # using reduce for join_string
 def join_string1(list_of_words):
-    sentence = reduce(lambda word, w: word + w, list_of_words)
+    sentence = reduce(lambda word, sentence: word + sentence, list_of_words)
     return sentence
 
 print(join_string1(words))
