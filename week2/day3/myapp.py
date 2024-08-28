@@ -18,5 +18,5 @@ def thename(name):
     return render_template('myname.html', thename = name)
 
 
-if __name__ == '__main__':
+if __name__ == '__main__': 
     app.run(debug=True, host='0.0.0.0')
